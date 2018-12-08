@@ -1,14 +1,11 @@
 import time
-import pyowm
+import weather
+import screen
 
-owm = pyowm.OWM('c775bcda06e00db36c4e509ce65f4ea2')  
-observation = owm.weather_at_place('Copenhagen,DK')
-w = observation.get_weather()
-
-print(w) 
+w = weather.get()
 
 def main():
-    print ("hello, ppl of da universe")
+    screen.draw(w)
 
 while True:
     main()
