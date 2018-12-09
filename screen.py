@@ -13,7 +13,8 @@ curses.init_pair(7, curses.COLOR_WHITE, curses.COLOR_MAGENTA)
 
 # clouds foreground
 curses.init_pair(8, curses.COLOR_WHITE, curses.COLOR_BLACK)
-
+# sun foreground
+curses.init_pair(9, curses.COLOR_YELLOW, curses.COLOR_YELLOW)
 def draw(frame):
     for i in range(8):
         row = frame[i]

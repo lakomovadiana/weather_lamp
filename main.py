@@ -5,7 +5,7 @@ import screen
 
 w = weather.get()
 temperature = w.get_temperature('celsius')['temp']
-weather_type = w.get_status()
+weather_type = "Sun" #w.get_status()
 frames = logic.get_frames(temperature, weather_type)
 
 def main():    
