@@ -1,5 +1,6 @@
 import weather_display.clouds
 import weather_display.sun
+import weather_display.rain
 
 def get_bgcolor(celsius):
     if celsius <= -10:
@@ -27,6 +28,9 @@ def get_frames (celsius, weather_type):
     elif weather_type == ("Sun"):
         frames = weather_display.sun.get_frames()
         fgcolor = weather_display.sun.COLOR_FOREGROUND
+    elif weather_type == ("Rain"):
+        frames = weather_display.rain.get_frames()
+        fgcolor = weather_display.rain.COLOR_FOREGROUND
 
     for frame in frames:
         for row in frame:
