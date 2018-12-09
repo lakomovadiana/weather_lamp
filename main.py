@@ -5,10 +5,11 @@ import screen
 
 w = weather.get()
 temperature = w.get_temperature('celsius')['temp']
+weather_type = w.get_status()
+frames = logic.get_frames(temperature, weather_type)
 
-def main():
-    bgcolor_code = logic.get_bgcolor(temperature)
-    screen.draw(bgcolor_code, w)
+def main():    
+    screen.draw(frames[0])
 
 while True:
     main()

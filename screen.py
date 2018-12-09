@@ -11,13 +11,14 @@ curses.init_pair(5, curses.COLOR_WHITE, curses.COLOR_YELLOW)
 curses.init_pair(6, curses.COLOR_WHITE, curses.COLOR_RED)
 curses.init_pair(7, curses.COLOR_WHITE, curses.COLOR_MAGENTA)
 
-def draw(bgcolor_code, weather):
-    temperature = weather.get_temperature('celsius')['temp']
-    #stdscr.addstr(0, 0, '{}'.format(temperature))
-    draw_matrix(bgcolor_code)
+# clouds foreground
+curses.init_pair(8, curses.COLOR_WHITE, curses.COLOR_BLACK)
+
+def draw(frame):
+    for i in range(8):
+        row = frame[i]
+        for j in range(0,24,3):
+            stdscr.addstr(i, j, ' * ',curses.color_pair(row[j // 3]))
     stdscr.refresh()
 
-def draw_matrix(bgcolor_code):
-    for i in range(0,24,3):
-        for j in range(0,8):
-            stdscr.addstr(j, i, ' * ',curses.color_pair(bgcolor_code))
+    
