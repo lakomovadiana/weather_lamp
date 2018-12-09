@@ -17,6 +17,8 @@ curses.init_pair(8, curses.COLOR_WHITE, curses.COLOR_BLACK)
 curses.init_pair(9, curses.COLOR_YELLOW, curses.COLOR_YELLOW)
 # rain foreground
 curses.init_pair(10, curses.COLOR_BLUE, curses.COLOR_BLUE)
+# snow foreground
+curses.init_pair(11, curses.COLOR_WHITE, curses.COLOR_WHITE)
 def draw(frame):
     for i in range(8):
         row = frame[i]
